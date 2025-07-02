@@ -364,16 +364,6 @@ main{
     font-size: 18px;
   }
 }
-.keyboard {
-  width: 100%;
-  max-width: 600px;
-  height: 400px;
-  display: block;
-  margin: 0 auto;
-  margin-top: -40px; /* default for desktop */
-  z-index: 0;
-}
-
 @media (max-width: 768px) {
   .keyboard {
     height: 280px;
