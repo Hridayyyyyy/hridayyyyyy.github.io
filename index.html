@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hriday Sharma | Resume</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d0d0d;
-      color: #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 40px 20px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
 
-    h1 {
-      color: #ffffff;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #b0b0b0;
-      margin-bottom: 40px;
-      font-size: 1.1rem;
-    }
-
-    .download-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      background-color: #1e1e1e;
-      color: #ffffff;
-      border: 2px solid #00ccff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-    }
-
-    .download-btn:hover {
-      background-color: #00ccff;
-      color: #0d0d0d;
-      transform: scale(1.05);
-    }
-
-    .icon {
-      margin-right: 10px;
-    }
-
-    footer {
-      margin-top: 60px;
-      color: #666;
-      font-size: 0.9rem;
-    }
-  </style>
 </head>
 <body>
+    <a href="contact.html"></a>
+    <a href="resume.html"></a>
 
-  <h1>📄 Hriday Sharma's Resume</h1>
-  <p>Click below to download my resume</p>
+    <img class = "image-gradient" src="gradient.png" alt="gradient">
+    <div class="layer-blur"></div>
+    <div class="container">
+        <header>
+            <h1 class="logo">HRIDAY</h1>
+            <div class="links">
+        <nav>
+            <a href="#">HOME</a>
+            <a href="works.html">WORKS</a>
+            <a href="resume.html">RESUME</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        </div>
+        </header>
+        <main>
+        
+        <div class="intro">
+            <h1>Hi, I'm Hriday <br>from India</h1>
+            <div class="tag-box">
+            <div class="tag">Future Data Scientist &#9651;</div>
+            </div>
+            </div>
+            <!-- Heart Button (can be transparent or styled) -->
+<button id="heartButton" style="background: none; border: none; cursor: pointer; position: absolute; bottom: 100px; right: 100px; z-index: 999;">
+  ❤️
+</button>
 
-  <a class="download-btn" href="Hriday_Sharma_Creative_Resume.pdf" download>
-    ⬇️ Download Resume
-  </a>
+<!-- Container for floating hearts -->
+<div id="heartContainer"></div>
+        </main>
+        <spline-viewer class="keyboard" url="https://prod.spline.design/hIIeMwZlExX-2NAR/scene.splinecode" tabindex = "0"></spline-viewer>
+    </div>
+<style>
+    button{
+        top: 95%;
+    }
+</style>
 
-  <footer>
-    &copy; 2025 Hriday Sharma. All rights reserved.
-  </foo
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.18/build/spline-viewer.js"></script>
+<script>
+  const heartBtn = document.getElementById("heartButton");
+  const heartContainer = document.getElementById("heartContainer");
+
+  heartBtn.addEventListener("click", () => {
+    for (let i = 0; i < 15; i++) {
+      createHeart();
+    }
+  });
+
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "0px";
+    heartContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 2000);
+  }
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const viewer = document.querySelector("spline-viewer");
+
+    // Focus on load
+    viewer.focus();
+
+    // Also focus when user clicks the model
+    viewer.addEventListener("click", () => {
+      viewer.focus();
+    });
+  });
+</script>
+</body>
+</html>
