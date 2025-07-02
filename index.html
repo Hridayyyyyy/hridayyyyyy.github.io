@@ -1,41 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hriday | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <header class="navbar">
-    <div class="logo">HRIDAY</div>
-    <nav class="nav-links">
-      <a href="#">HOME</a>
-      <a href="#">WORKS</a>
-      <a href="#">RESUME</a>
-      <a href="#">CONTACT</a>
-    </nav>
-  </header>
+    <a href="contact.html"></a>
+    <a href="resume.html"></a>
 
-  <!-- Main Hero Section -->
-  <main class="hero-section">
-    <!-- Text Section -->
-    <div class="hero-text">
-      <h1>Hi, I'm Hriday<br>from India</h1>
-      <a href="#" class="cta-button">Future Data Scientist △</a>
-    </div>
+    <img class = "image-gradient" src="gradient.png" alt="gradient">
+    <div class="layer-blur"></div>
+    <div class="container">
+        <header>
+            <h1 class="logo">HRIDAY</h1>
+            <div class="links">
+        <nav>
+            <a href="#">HOME</a>
+            <a href="works.html">WORKS</a>
+            <a href="resume.html">RESUME</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        </div>
+        </header>
+        <main>
+        
+        <div class="intro">
+            <h1>Hi, I'm Hriday <br>from India</h1>
+            <div class="tag-box">
+            <div class="tag">Future Data Scientist &#9651;</div>
+            </div>
+            </div>
+            <!-- Heart Button (can be transparent or styled) -->
+<button id="heartButton" style="background: none; border: none; cursor: pointer; position: absolute; bottom: 100px; right: 100px; z-index: 999;">
+  ❤️
+</button>
 
-    <!-- Spline 3D Model -->
-    <div class="spline-container">
-      <iframe
-        src="https://my.spline.design/yourmodelurlhere"
-        frameborder="0"
-        width="100%"
-        height="100%"
-        allow="autoplay; fullscreen"
-      ></iframe>
+<!-- Container for floating hearts -->
+<div id="heartContainer"></div>
+        </main>
+        <spline-viewer class="keyboard" url="https://prod.spline.design/hIIeMwZlExX-2NAR/scene.splinecode" tabindex = "0"></spline-viewer>
     </div>
-  </main>
+<style>
+    button{
+        top: 95%;
+    }
+</style>
+
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.18/build/spline-viewer.js"></script>
+<script>
+  const heartBtn = document.getElementById("heartButton");
+  const heartContainer = document.getElementById("heartContainer");
+
+  heartBtn.addEventListener("click", () => {
+    for (let i = 0; i < 15; i++) {
+      createHeart();
+    }
+  });
+
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "0px";
+    heartContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 2000);
+  }
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const viewer = document.querySelector("spline-viewer");
+
+    // Focus on load
+    viewer.focus();
+
+    // Also focus when user clicks the model
+    viewer.addEventListener("click", () => {
+      viewer.focus();
+    });
+  });
+</script>
 </body>
 </html>
