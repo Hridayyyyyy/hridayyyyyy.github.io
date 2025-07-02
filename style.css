@@ -1,164 +1,139 @@
-/* Base reset */
+/* General styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styling */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #000;
-  color: white;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 
-/* Container wrapper */
+/* Container holds everything */
 .container {
-  padding: 20px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Header */
+/* Header styling */
 header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 30px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  z-index: 10;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 32px;
   font-weight: bold;
 }
 
-.menu-toggle {
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: block;
-}
-
-/* Nav links */
-.links nav {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
-}
-
-.links nav a {
+/* Navigation links */
+nav a {
   color: white;
+  margin-left: 25px;
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
-.links nav a:hover {
-  color: #9f7aea;
+nav a:hover {
+  color: #a855f7;
 }
 
-/* Intro Section */
+/* Intro text */
+.intro {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  z-index: 10;
+}
+
 .intro h1 {
-  font-size: 1.4rem;
-  margin-top: 20px;
+  font-size: 48px;
+  font-weight: bold;
   margin-bottom: 20px;
-  font-weight: 600;
-  line-height: 1.4;
 }
 
-/* Gradient Button */
+/* Tag style */
 .tag-box {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .tag {
-  display: inline-block;
-  padding: 10px 20px;
+  background: linear-gradient(90deg, #7f00ff, #e100ff);
+  color: white;
+  padding: 10px 25px;
   border-radius: 30px;
   font-weight: bold;
-  color: white;
-  background: linear-gradient(90deg, #7f00ff, #e100ff);
-  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
-  animation: pulseGlow 2s infinite;
-  transition: transform 0.3s ease;
-  font-size: 0.85rem;
-  cursor: default;
+  box-shadow: 0 0 20px #e100ff;
 }
 
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 10px #a855f7, 0 0 20px #9333ea;
-  }
-  50% {
-    box-shadow: 0 0 20px #c084fc, 0 0 40px #a855f7;
-  }
-  100% {
-    box-shadow: 0 0 10px #a855f7, 0 0 20px #9333ea;
-  }
-}
-
-/* Spline Viewer */
+/* Spline viewer styling */
 spline-viewer.keyboard {
-  display: block;
-  width: 100vw;
-  aspect-ratio: 1 / 1;
-  margin: 30px 0;
-  background: transparent;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* Heart Button */
-#heartButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  bottom: 40px;
-  right: 20px;
-  z-index: 999;
-  font-size: 1.5rem;
-}
-
-/* Floating hearts */
-#heartContainer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Gradient image */
+.image-gradient {
+  position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
-  pointer-events: none;
-  z-index: 999;
+  z-index: 0;
+  opacity: 0.3;
 }
 
-.heart {
+/* Optional blur overlay */
+.layer-blur {
   position: absolute;
-  font-size: 20px;
-  animation: floatHeart 2s ease-out forwards;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0px);
+  z-index: 0;
 }
 
-@keyframes floatHeart {
+/* Heart button */
+#heartButton {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  z-index: 99;
+  font-size: 24px;
+}
+
+/* Floating heart animation */
+#heartContainer .heart {
+  position: absolute;
+  animation: floatUp 2s ease-out forwards;
+  font-size: 24px;
+  color: #ff69b4;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
   0% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
     opacity: 1;
   }
   100% {
-    transform: translateY(-150px) scale(1.5);
+    transform: translateY(-200px);
     opacity: 0;
   }
 }
-
-/* Media Queries for responsiveness */
-@media (min-width: 768px) {
-  .intro h1 {
-    font-size: 2rem;
-  }
-
-  .tag {
-    font-size: 1rem;
-    padding: 12px 25px;
-  }
-
-  .logo {
-    font-size: 2rem;
-  }
-}
-
