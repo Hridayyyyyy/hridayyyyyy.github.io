@@ -1,163 +1,19 @@
-/* Base reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<div class="navbar">
+  <h1>HRIDAY</h1>
+  <div class="nav-links">
+    <a href="#home">HOME</a>
+    <a href="#works">WORKS</a>
+    <a href="#resume">RESUME</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</div>
 
-/* Body styling */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000;
-  color: white;
-  overflow-x: hidden;
-}
-
-/* Container wrapper */
-.container {
-  padding: 20px;
-}
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.menu-toggle {
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: block;
-}
-
-/* Nav links */
-.links nav {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
-}
-
-.links nav a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.links nav a:hover {
-  color: #9f7aea;
-}
-
-/* Intro Section */
-.intro h1 {
-  font-size: 1.4rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-/* Gradient Button */
-.tag-box {
-  margin-top: 10px;
-}
-
-.tag {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(90deg, #7f00ff, #e100ff);
-  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
-  animation: pulseGlow 2s infinite;
-  transition: transform 0.3s ease;
-  font-size: 0.85rem;
-  cursor: default;
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 10px #a855f7, 0 0 20px #9333ea;
-  }
-  50% {
-    box-shadow: 0 0 20px #c084fc, 0 0 40px #a855f7;
-  }
-  100% {
-    box-shadow: 0 0 10px #a855f7, 0 0 20px #9333ea;
-  }
-}
-
-/* Spline Viewer */
-spline-viewer.keyboard {
-  display: block;
-  width: 100vw;
-  aspect-ratio: 1 / 1;
-  margin: 30px 0;
-  background: transparent;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* Heart Button */
-#heartButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  bottom: 40px;
-  right: 20px;
-  z-index: 999;
-  font-size: 1.5rem;
-}
-
-/* Floating hearts */
-#heartContainer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 999;
-}
-
-.heart {
-  position: absolute;
-  font-size: 20px;
-  animation: floatHeart 2s ease-out forwards;
-}
-
-@keyframes floatHeart {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-150px) scale(1.5);
-    opacity: 0;
-  }
-}
-
-/* Media Queries for responsiveness */
-@media (min-width: 768px) {
-  .intro h1 {
-    font-size: 2rem;
-  }
-
-  .tag {
-    font-size: 1rem;
-    padding: 12px 25px;
-  }
-
-  .logo {
-    font-size: 2rem;
-  }
-}
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm Hriday<br>from India</h1>
+    <button class="cta-button">Future Data Scientist △</button>
+  </div>
+  <div class="hero-image">
+    <img src="your-keyboard-image.png" alt="3D keyboard">
+  </div>
+</section>
