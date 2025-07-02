@@ -128,10 +128,20 @@ main{
 .tag.tag:hover{
     color: #5300a0;
 }
+.keyboard::part(canvas) {
+  outline: none;
+  border: none;
+}
 .keyboard{
     position: absolute;
     top: 0%;
     right: -13%;
+  outline: none;
+  border: none ;
+  display: block;
+  overflow: hidden;
+  contain: strict;
+  isolation: isolate;
 }
 .links{
     z-index: 1;
