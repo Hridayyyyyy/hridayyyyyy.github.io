@@ -1,207 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hriday Sharma | Resume</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            overflow-x: hidden;
-        }
+    h1 {
+      color: #ffffff;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-        .container {
-            position: relative;
-            padding: 40px;
-            z-index: 1;
-        }
+    p {
+      color: #b0b0b0;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 40px;
-        }
+    .download-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      border: 2px solid #00ccff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
 
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-        }
+    .download-btn:hover {
+      background-color: #00ccff;
+      color: #0d0d0d;
+      transform: scale(1.05);
+    }
 
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 1rem;
-            letter-spacing: 5px;
-        }
+    .icon {
+      margin-right: 10px;
+    }
 
-        .intro {
-            margin-top: 60px;
-            max-width: 500px;
-        }
-
-        .intro h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .tag-box {
-            background: #9e47f5;
-            padding: 15px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            box-shadow: 0 0 20px rgba(158, 71, 245, 0.6);
-        }
-
-        .tag {
-            font-weight: bold;
-            color: white;
-        }
-
-        .image-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            z-index: -2;
-        }
-
-        .layer-blur {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            backdrop-filter: blur(10px);
-            z-index: -1;
-        }
-
-        spline-viewer.keyboard {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 60vw;
-            height: 60vh;
-            max-width: 800px;
-            max-height: 600px;
-            z-index: 0;
-        }
-
-        #heartButton {
-            position: absolute;
-            bottom: 100px;
-            right: 100px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-            font-size: 2rem;
-        }
-
-        #heartContainer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 999;
-        }
-
-        .heart {
-            position: absolute;
-            animation: floatUp 2s ease-out forwards;
-            font-size: 1.5rem;
-        }
-
-        @keyframes floatUp {
-            0% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-200px);
-            }
-        }
-    </style>
+    footer {
+      margin-top: 60px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <img class="image-gradient" src="gradient.png" alt="gradient">
-    <div class="layer-blur"></div>
 
-    <div class="container">
-        <header>
-            <h1 class="logo">HRIDAY</h1>
-            <div class="links">
-                <nav>
-                    <a href="#">HOME</a>
-                    <a href="works.html">WORKS</a>
-                    <a href="resume.html">RESUME</a>
-                    <a href="contact.html">CONTACT</a>
-                </nav>
-            </div>
-        </header>
+  <h1>📄 Hriday Sharma's Resume</h1>
+  <p>Click below to download my resume</p>
 
-        <main>
-            <div class="intro">
-                <h1>Hi, I'm Hriday <br>from India</h1>
-                <div class="tag-box">
-                    <div class="tag">Future Data Scientist &#9651;</div>
-                </div>
-            </div>
+  <a class="download-btn" href="Hriday_Sharma_Creative_Resume.pdf" download>
+    ⬇️ Download Resume
+  </a>
 
-            <button id="heartButton">❤️</button>
-            <div id="heartContainer"></div>
-        </main>
-
-        <!-- Spline Viewer -->
-        <spline-viewer class="keyboard" url="https://prod.spline.design/hIIeMwZlExX-2NAR/scene.splinecode" tabindex="0"></spline-viewer>
-    </div>
-
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.18/build/spline-viewer.js"></script>
-    <script>
-        const heartBtn = document.getElementById("heartButton");
-        const heartContainer = document.getElementById("heartContainer");
-
-        heartBtn.addEventListener("click", () => {
-            for (let i = 0; i < 15; i++) {
-                createHeart();
-            }
-        });
-
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.className = "heart";
-            heart.innerText = "❤️";
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.bottom = "0px";
-            heartContainer.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 2000);
-        }
-
-        window.addEventListener("DOMContentLoaded", () => {
-            const viewer = document.querySelector("spline-viewer");
-            viewer.focus();
-            viewer.addEventListener("click", () => {
-                viewer.focus();
-            });
-        });
-    </script>
-</body>
-</html>
+  <footer>
+    &copy; 2025 Hriday Sharma. All rights reserved.
+  </foo
