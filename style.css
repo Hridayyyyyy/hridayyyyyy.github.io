@@ -1,106 +1,149 @@
-/* Reset & Base Styles */
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #000;
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Navbar Styles */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
+/* Background gradient image */
+.image-gradient {
+  position: absolute;
   width: 100%;
-  padding: 1rem 2rem;
-  background-color: black;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Optional blur overlay */
+.layer-blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+/* Main layout */
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 1rem;
-  font-size: 1rem;
-  letter-spacing: 0.2rem;
-}
-
-/* Hero Section */
-.hero-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 7rem 2rem 2rem;
-  min-height: 100vh;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.hero-text {
-  flex: 1 1 400px;
-}
-
-.hero-text h1 {
   font-size: 2.5rem;
-  line-height: 1.4;
-  margin-bottom: 2rem;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: #8a2be2;
+  font-weight: 900;
   color: white;
-  font-weight: bold;
-  border-radius: 30px;
+}
+
+.links nav a {
+  color: white;
   text-decoration: none;
-  box-shadow: 0 0 20px #8a2be2;
-  transition: transform 0.3s ease;
+  margin-left: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.cta-button:hover {
-  transform: scale(1.05);
+.links nav a:hover {
+  color: #ccc;
 }
 
-/* Spline Container */
-.spline-container {
-  flex: 1 1 500px;
-  max-width: 700px;
+/* Intro Section */
+.intro {
+  margin-top: 5rem;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.tag-box {
+  margin-top: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #111;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid white;
+}
+
+/* Heart button */
+#heartButton {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  z-index: 999;
+}
+
+/* Floating hearts */
+#heartContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.heart {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: floatUp 2s ease-in forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
+
+/* Spline viewer styling */
+spline-viewer.keyboard {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
   height: 500px;
   z-index: 1;
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .spline-container {
-    height: 300px;
-    width: 100%;
-  }
-
-  .nav-links {
-    display: none;
-  }
 }
