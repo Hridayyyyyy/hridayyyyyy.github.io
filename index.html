@@ -41,7 +41,7 @@
 <!-- Container for floating hearts -->
 <div id="heartContainer"></div>
         </main>
-        <spline-viewer class="keyboard" url="https://prod.spline.design/hIIeMwZlExX-2NAR/scene.splinecode"></spline-viewer>
+        <spline-viewer class="keyboard" url="https://prod.spline.design/hIIeMwZlExX-2NAR/scene.splinecode" tabindex = "0"></spline-viewer>
     </div>
 <style>
         button{
@@ -72,6 +72,19 @@
       heart.remove();
     }, 2000);
   }
+</script>
+    <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const viewer = document.querySelector("spline-viewer");
+
+    // Focus on load
+    viewer.focus();
+
+    // Also focus when user clicks the model
+    viewer.addEventListener("click", () => {
+      viewer.focus();
+    });
+  });
 </script>
 </body>
 </html>
