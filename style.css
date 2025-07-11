@@ -249,10 +249,11 @@ box-shadow:
     font-size: 1.5rem;
   }
 }
-.robot{
+.robot {
   position: fixed;
   top: 0;
-  left: 100px;
+  left: 55%;
+  transform: translateX(-20%);
   width: 200vw;
   height: 200vh;
   z-index: -1;
