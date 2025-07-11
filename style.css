@@ -251,8 +251,8 @@ main{
 .robot{
   position: fixed;
   top: 0;
-  left: 400px;
-  width: 100vw;
-  height: 100vh;
+  left: 200px;
+  width: 200vw;
+  height: 200vh;
   z-index: -1;
 }
