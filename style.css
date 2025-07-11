@@ -252,7 +252,7 @@ box-shadow:
 .robot {
   position: fixed;
   top: 0;
-  left: -40vw; /* Negative to pull it left, revealing more right side */
+  left: -50vw; /* Negative to pull it left, revealing more right side */
   width: 200vw;
   height: 200vh;
   z-index: -1;
