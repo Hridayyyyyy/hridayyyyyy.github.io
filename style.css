@@ -252,7 +252,7 @@ box-shadow:
 .robot{
   position: fixed;
   top: 0;
-  left: 65%;
+  left: 5%;
   width: 200vw;
   height: 200vh;
   z-index: -1;
